@@ -10,8 +10,10 @@ from typing import List
 
 WIDTH = 40
 HEIGHT = 20
+
 ALIVE = "*"
 ALIVE = "O"
+
 DEAD = " "
 
 
@@ -63,7 +65,8 @@ def main():
             time.sleep(0.18)
     except KeyboardInterrupt:
 
-        print("\nSimulation Stopped.")
+        print("\n[v3] Simulation ended.")
+
 
 
 
