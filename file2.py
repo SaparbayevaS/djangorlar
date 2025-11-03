@@ -12,7 +12,7 @@ from typing import List
 
 WIDTH = 40
 HEIGHT = 20
-ALIVE = "█"
+ALIVE = "№"
 DEAD = " "
 
 def clear():
@@ -68,7 +68,7 @@ def main():
             generation += 1
             time.sleep(0.18)
     except KeyboardInterrupt:
-        print("\nStopped.")
+        print("\nend of simulation [v4]")
 
 if __name__ == "__main__":
     main()
