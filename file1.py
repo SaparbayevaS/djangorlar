@@ -14,7 +14,7 @@ SAVE_FILE = "tasks.json"
 
 @dataclass
 class Task:
-    id: int
+    id: str
     title: str
     created: str
     done: bool = False
@@ -32,11 +32,13 @@ class TaskManager:
         self.tasks.append(t)
         self._next_id += 1
 
-        print(f"[v4] task created #{t.id}: {t.title}")
+
+        print(f"Добавлена задача #{t.id}: {t.title}")
 
     def list(self, show_all=True):
         if not self.tasks:
-            print("пока Задач нет.")
+            print("Нет активных задач.")
+
 
             return
         for t in self.tasks:
@@ -45,7 +47,7 @@ class TaskManager:
                 tags = f"[{', '.join(t.tags)}]" if t.tags else ""
                 print(f"#{t.id:02d} [{status}] {t.title} {tags} (created: {t.created})")
 
-    def mark_done(self, task_id: int):
+    def mark_do00ne(self, task_id: int):
         t = self._find(task_id)
         if t:
             t.done = True
@@ -53,13 +55,7 @@ class TaskManager:
         else:
             print("Task not found.")
 
-    def remove(self, task_id: int):
-        t = self._find(task_id)
-        if t:
-            self.tasks.remove(t)
-            print(f"Task #{task_id} удалена.")
-        else:
-            print("Task not found.")
+
 
     def save(self, filename=SAVE_FILE):
         data = {
