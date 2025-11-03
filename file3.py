@@ -10,7 +10,7 @@ import time
 from typing import List, Tuple
 
 
-TARGET = "Evolving phrase for ver three"
+TARGET = "version four testing"
 POP_SIZE = 200
 MUTATION_RATE = 0.03
 TOURNAMENT_SIZE = 5
@@ -69,7 +69,7 @@ def evolve():
         if generation % 20 == 0 or generation < 50:
             elapsed = time.time() - start
 
-            print(f"(v3) Gen {generation:4d} | Best: '{best}' | Score: {best_score} | Time: {elapsed:.2f}s")
+            print(f"GEN {generation:4d} | BEST: '{best}' | SCORE: {best_score} | TiIME: {elapsed:.2f}s")
         generation += 1
 
     total_time = time.time() - start
