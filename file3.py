@@ -10,7 +10,9 @@ import time
 from typing import List, Tuple
 
 
-TARGET = "version four testing"
+
+TARGET = "Evolving phrase for ver three"
+
 
 POP_SIZE = 200
 MUTATION_RATE = 0.03
@@ -70,8 +72,13 @@ def evolve():
         if generation % 20 == 0 or generation < 50:
             elapsed = time.time() - start
 
+<<<<<<< HEAD
 
             print(f"[v2] Gen {generation:4d} | Best: '{best}' | Score: {best_score} | Time: {elapsed:.2f}s")
+=======
+            print(f"(v3) Gen {generation:4d} | Best: '{best}' | Score: {best_score} | Time: {elapsed:.2f}s")
+
+>>>>>>> 8bec84e (Changing duplicate-3)
 
         generation += 1
 
