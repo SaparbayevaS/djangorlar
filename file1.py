@@ -132,13 +132,8 @@ def repl():
                 continue
             tm.remove(int(parts[1]))
             continue
-        if parts[0] == "save":
-            tm.save()
-            continue
-        if parts[0] == "load":
-            tm.load()
-            continue
-        print("Неизвестная команда. help")
+      
+        print("help")
         
 if __name__ == "__main__":
     repl()
