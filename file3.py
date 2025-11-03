@@ -9,7 +9,9 @@ import math
 import time
 from typing import List, Tuple
 
-TARGET = "fifth var generic algoooooo"
+
+TARGET = "version four testing"
+
 POP_SIZE = 200
 MUTATION_RATE = 0.03
 TOURNAMENT_SIZE = 5
@@ -72,7 +74,9 @@ def evolve():
             best, best_score = current_best, current_score
         if generation % 20 == 0 or generation < 50:
             elapsed = time.time() - start
+
             print(f"[v5] Generation {generation:4d} | Best result: '{best}' | Score is: {best_score} | Time is: {elapsed:.2f}s")
+
         generation += 1
 
     total_time = time.time() - start
