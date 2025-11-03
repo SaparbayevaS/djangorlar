@@ -5,11 +5,11 @@
 """
 import random
 import string
-import math
+
 import time
 from typing import List, Tuple
 
-TARGET = "hello world this is a genetic algorithm"
+TARGET = "hello world this is version two"
 POP_SIZE = 200
 MUTATION_RATE = 0.03
 TOURNAMENT_SIZE = 5
@@ -28,12 +28,7 @@ def fitness(individual: str, target: str) -> int:
         score += abs(ord(a) - ord(b))
     return score
 
-def mutate(ind: str, rate: float) -> str:
-    chars = list(ind)
-    for i in range(len(chars)):
-        if random.random() < rate:
-            chars[i] = random.choice(CHARS)
-    return "".join(chars)
+
 
 def crossover(a: str, b: str) -> str:
     # одноточечный кроссовер
@@ -63,7 +58,7 @@ def evolve():
             parent1 = tournament_select(population, TARGET)
             parent2 = tournament_select(population, TARGET)
             child = crossover(parent1, parent2)
-            child = mutate(child, MUTATION_RATE)
+            
             new_pop.append(child)
         population = new_pop
         current_best = min(population, key=lambda ind: fitness(ind, TARGET))
@@ -72,7 +67,7 @@ def evolve():
             best, best_score = current_best, current_score
         if generation % 20 == 0 or generation < 50:
             elapsed = time.time() - start
-            print(f"Gen {generation:4d} | Best: '{best}' | Score: {best_score} | Time: {elapsed:.2f}s")
+            print(f"[v2] Gen {generation:4d} | Best: '{best}' | Score: {best_score} | Time: {elapsed:.2f}s")
         generation += 1
 
     total_time = time.time() - start

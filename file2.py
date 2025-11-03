@@ -6,20 +6,13 @@ Conway's Game of Life в терминале.
 """
 import random
 import time
-import os
-import sys
 from typing import List
 
 WIDTH = 40
 HEIGHT = 20
-ALIVE = "█"
+ALIVE = "O"
 DEAD = " "
 
-def clear():
-    if os.name == "nt":
-        os.system("cls")
-    else:
-        sys.stdout.write("\033[H\033[J")
 
 def make_grid(randomize=True) -> List[List[int]]:
     grid = [[0 for _ in range(WIDTH)] for _ in range(HEIGHT)]
@@ -62,13 +55,13 @@ def main():
     generation = 0
     try:
         while True:
-            clear()
+           
             render(grid, generation)
             grid = step(grid)
             generation += 1
             time.sleep(0.18)
     except KeyboardInterrupt:
-        print("\nStopped.")
+        print("\nSimulation Stopped.")
 
 if __name__ == "__main__":
     main()
