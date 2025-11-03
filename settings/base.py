@@ -2,7 +2,7 @@
 import os
 
 # Project modules
-from settings.conf import *  # noqa: F403
+from .conf import *  # noqa: F403
 
 
 # ----------------------------------------------
@@ -27,7 +27,8 @@ DJANGO_AND_THIRD_PARTY_APPS = [
 PROJECT_APPS = [
     'catalogs',
     'commerces',
-]
+    'customusers',
+    ]
 INSTALLED_APPS = DJANGO_AND_THIRD_PARTY_APPS + PROJECT_APPS
 
 # ----------------------------------------------
@@ -97,3 +98,4 @@ DATABASES = {
     }
 }
 ALLOWED_HOSTS = ['*']
+AUTH_USER_MODEL = 'customusers.CustomUser2'

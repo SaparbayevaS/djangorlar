@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 # Create your models here.
 class Address(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     address_line = models.CharField(max_length=255)
 
 class Order(models.Model):
@@ -12,7 +12,7 @@ class Order(models.Model):
         ('delivering', 'Delivering'),
         ('done', 'Done')
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     restaurant = models.ForeignKey('catalogs.Restaurant', on_delete=models.CASCADE)
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='new')
