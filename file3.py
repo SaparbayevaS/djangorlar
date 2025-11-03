@@ -10,10 +10,10 @@ import time
 from typing import List, Tuple
 
 TARGET = "hello world this is a genetic algorithm"
-POP_SIZE = 1000
-MUTATION_RATE = 20
-TOURNAMENT_SIZE = 20
-MAX_GENERATIONS = 1234
+POP_SIZE = 200
+MUTATION_RATE = 0.03
+TOURNAMENT_SIZE = 5
+MAX_GENERATIONS = 2000
 
 CHARS = string.ascii_lowercase + " "  # только строчные + пробел
 
@@ -76,7 +76,11 @@ def evolve():
         generation += 1
 
     total_time = time.time() - start
-   
+    print("-" * 60)
+    print(f"Finished in {generation} generations, time {total_time:.2f}s")
+    print(f"Best result: '{best}' with score {best_score}")
+    if best_score == 0:
+        print("Target reached!")
 
 if __name__ == "__main__":
     evolve()

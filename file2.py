@@ -57,3 +57,18 @@ def render(grid, generation):
         lines.append("".join(ALIVE if c else DEAD for c in row))
     print("\n".join(lines))
 
+def main():
+    grid = make_grid(randomize=True)
+    generation = 0
+    try:
+        while True:
+            clear()
+            render(grid, generation)
+            grid = step(grid)
+            generation += 1
+            time.sleep(0.18)
+    except KeyboardInterrupt:
+        print("\nStopped.")
+
+if __name__ == "__main__":
+    main()
