@@ -31,11 +31,11 @@ class TaskManager:
         t = Task(id=self._next_id, title=title, created=str(datetime.datetime.now()), tags=tags)
         self.tasks.append(t)
         self._next_id += 1
-        print(f"Added task #{t.id}: {t.title}")
+        print(f"[v5] created  #{t.id}: {t.title}")
 
     def list(self, show_all=True):
         if not self.tasks:
-            print("Задач нет.")
+            print("Задач нетуууу и пусто крч")
             return
         for t in self.tasks:
             if show_all or not t.done:
