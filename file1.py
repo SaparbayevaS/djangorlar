@@ -32,14 +32,11 @@ class TaskManager:
         self.tasks.append(t)
         self._next_id += 1
 
-        print(f"Добавлена задача #{t.id}: {t.title}")
-
+        print(f"[v3] Новая задача #{t.id}: {t.title}")
 
     def list(self, show_all=True):
         if not self.tasks:
             print("Список задач пуст")
-
-
             return
         for t in self.tasks:
             if show_all or not t.done:
