@@ -3,7 +3,7 @@ import os
 
 # Project modules
 from .conf import *  # noqa: F403
-
+DEBUG = True
 
 # ----------------------------------------------
 # Path
@@ -84,8 +84,9 @@ USE_TZ = True
 # ----------------------------------------------
 # Static | Media
 #
-STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')     
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -98,4 +99,4 @@ DATABASES = {
     }
 }
 ALLOWED_HOSTS = ['*']
-AUTH_USER_MODEL = 'customusers.CustomUser2'
+AUTH_USER_MODEL = 'customusers.CustomUser'
