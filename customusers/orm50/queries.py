@@ -5,7 +5,7 @@ from django.db.models.functions import ExtractYear, Now
 
 
 q_2_1 = CustomUser.objects.filter(is_active=True)
-q_2_2 = CustomUser.objects.filter(email__endwith="@gmail.com")
+q_2_2 = CustomUser.objects.filter(email__endswith="@gmail.com")
 q_2_3 = CustomUser.objects.filter(city="Almaty")
 q_2_4 = CustomUser.objects.exclude(city="Almaty")
 q_2_5 = CustomUser.objects.filter(salary__gt=500000)

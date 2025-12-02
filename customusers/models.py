@@ -48,8 +48,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     last_login = DateTimeField(blank=True, null=True)
     objects = CustomUserManager()
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+    USERNAME_FIELD = 'username' 
+    REQUIRED_FIELDS = ['email'] 
 
     def __str__(self):
         return self.email
